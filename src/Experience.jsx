@@ -1,4 +1,4 @@
-import { Html, Hud, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import BlackHole from "./galaxy/BlackHole";
 import Galaxy from "./galaxy/Galaxy";
 import Stars from "./galaxy/Stars";
