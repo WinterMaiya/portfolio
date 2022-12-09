@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei";
+import { Html, Hud, OrbitControls } from "@react-three/drei";
 import BlackHole from "./galaxy/BlackHole";
 import Galaxy from "./galaxy/Galaxy";
 import Stars from "./galaxy/Stars";
@@ -19,27 +19,27 @@ const Experience = () => {
 	};
 
 	const galaxyCenterProperties = {
-		count: 90000,
+		count: 300000,
 		size: 0.03,
-		radius: 3,
+		radius: 0.5,
 		branches: 3,
-		spin: 100,
+		spin: 1000,
 		randomness: 0.6,
 		randomnessPower: 3,
 		insideColor: "#FE8966",
-		outsideColor: "#52c8ff",
+		outsideColor: "#FE8966",
 		rotation: 0.007,
 	};
 
 	const galaxyCenterOuter = {
-		count: 200000,
+		count: 500000,
 		size: 0.05,
-		radius: 6,
+		radius: 5,
 		branches: 3,
 		spin: 100,
 		randomness: 0.5,
 		randomnessPower: 3,
-		insideColor: "#FFE6E1",
+		insideColor: "#FE8966",
 		outsideColor: "#52c8ff",
 		rotation: 0.003,
 	};

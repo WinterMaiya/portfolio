@@ -2,10 +2,13 @@ import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
 import { Environment, PerformanceMonitor, Stats } from "@react-three/drei";
+import Interface from "./Interface";
 
 function App() {
 	return (
 		<>
+			{" "}
+			{/* <Ui /> */}
 			<Canvas
 				camera={{
 					fov: 60,
@@ -18,7 +21,9 @@ function App() {
 				<PerformanceMonitor />
 				<Experience />
 			</Canvas>
+			<Interface />
 			{/* TODO: UI Later */}
+			{/* <Ui /> */}
 		</>
 	);
 }

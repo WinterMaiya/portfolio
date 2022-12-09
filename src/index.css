@@ -14,3 +14,25 @@ body,
 	overflow: hidden;
 	background: black;
 }
+
+.interface {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Used to disable mouse click events */
+	/* pointer-events: none; */
+}
+
+.centered {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #ffffff;
+	font-size: 6vh;
+	background: #00000033;
+	padding-top: 5px;
+	text-align: center;
+}
