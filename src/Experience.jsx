@@ -4,7 +4,9 @@ import Galaxy from "./galaxy/Galaxy";
 import Stars from "./galaxy/Stars";
 
 const Experience = () => {
-	// All items to be rendered within the THree.js canvas.
+	// All items to be rendered within the Three.js canvas.
+
+	// Properties for the 3D galaxy and stars
 	const galaxyMainProperties = {
 		count: 730000,
 		size: 0.05,
@@ -50,6 +52,7 @@ const Experience = () => {
 		radius: 125,
 		rotation: 0.0001,
 	};
+
 	return (
 		<>
 			<ambientLight />

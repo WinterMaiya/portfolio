@@ -1,4 +1,6 @@
-const Interface = () => {
+const Interface = ({ setCameraLocation }) => {
+	// Creates a interface that goes above the 3D canvas.
+	// Uses Material Ui for the styling
 	return (
 		<div className="interface">
 			<div className="centered">
