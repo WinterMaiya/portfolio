@@ -14,6 +14,7 @@ function App() {
 
 	// Reference for the PerspectiveCamera
 	const cameraRef = useRef();
+	console.log(cameraRef);
 
 	return (
 		<>
