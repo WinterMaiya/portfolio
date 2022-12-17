@@ -26,9 +26,9 @@ function App() {
 				/>
 				<Stats />
 				<PerformanceMonitor />
-				<Experience />
+				<Experience globalRef={globalRef} />
 			</Canvas>
-			<Interface cameraRef={cameraRef} />
+			<Interface cameraRef={cameraRef} globalRef={globalRef} />
 		</>
 	);
 }

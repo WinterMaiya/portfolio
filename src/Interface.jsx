@@ -1,14 +1,19 @@
 import { Button, Grid, Grow, Typography, Zoom } from "@mui/material";
 import { Container } from "@mui/system";
 import gsap from "gsap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Interface = ({ cameraRef }) => {
+const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
 	// Uses Material Ui for the styling
 
 	// "loading", "welcome", "home", "projects", "art", "about", "contact"
 	const [displayState, setDisplayState] = useState("welcome");
+
+	useEffect(() => {
+		console.log("The Ref has changed");
+		console.log(globalRef);
+	}, [globalRef]);
 
 	const animate = (newX, newY, newZ, state) => {
 		// Animates the camera to the current position
