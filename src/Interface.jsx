@@ -29,6 +29,9 @@ const Interface = ({ cameraRef }) => {
 	};
 	return (
 		<div className="interface">
+			<div id="displayState" hidden>
+				{displayState}
+			</div>
 			<Container>
 				<section
 					id="welcome"
