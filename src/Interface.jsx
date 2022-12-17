@@ -10,10 +10,10 @@ const Interface = ({ cameraRef, globalRef }) => {
 	// "loading", "welcome", "home", "projects", "art", "about", "contact"
 	const [displayState, setDisplayState] = useState("welcome");
 
-	useEffect(() => {
-		console.log("The Ref has changed");
-		console.log(globalRef);
-	}, [globalRef]);
+	// useEffect(() => {
+	// 	console.log("The Ref has changed");
+	// 	console.log(globalRef);
+	// }, [globalRef]);
 
 	const animate = (newX, newY, newZ, state) => {
 		// Animates the camera to the current position
