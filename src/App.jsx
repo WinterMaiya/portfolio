@@ -11,6 +11,8 @@ import { useRef, useState } from "react";
 function App() {
 	// Rendering the application
 	// Canvas refers to the 3D canvas while Interface refers to the HTML ui above.
+	const globalRef = useRef("welcome");
+	console.log(globalRef);
 
 	// Reference for the PerspectiveCamera
 	const cameraRef = useRef();
@@ -26,9 +28,9 @@ function App() {
 				/>
 				<Stats />
 				<PerformanceMonitor />
-				<Experience />
+				<Experience globalRef={globalRef} />
 			</Canvas>
-			<Interface cameraRef={cameraRef} />
+			<Interface cameraRef={cameraRef} globalRef={globalRef} />
 		</>
 	);
 }

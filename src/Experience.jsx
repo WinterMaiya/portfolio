@@ -7,7 +7,7 @@ import Galaxy from "./galaxy/Galaxy";
 import Stars from "./galaxy/Stars";
 import TextPlain from "./galaxy/TextPlain";
 
-const Experience = () => {
+const Experience = ({ globalRef }) => {
 	// All items to be rendered within the Three.js canvas.
 
 	// Properties for the 3D galaxy and stars
@@ -75,10 +75,30 @@ const Experience = () => {
 			<Stars id="Stars" {...starsProperties} />
 			<BlackHole id="BlackHole" />
 			<TextPlain>
-				<FloatingText text="Projects" location={[3, 0, -0.5]} />
-				<FloatingText text="Art" location={[0.1, 3, -0.4]} />
-				<FloatingText text="About" location={[-3, -0.2, -0.6]} />
-				<FloatingText text="Contact" location={[-0.1, -3, -0.7]} />
+				<FloatingText
+					text="Projects"
+					location={[3, 0, -0.5]}
+					globalRef={globalRef}
+					stateToBeValue="projects"
+				/>
+				<FloatingText
+					text="Art"
+					location={[0.1, 3, -0.4]}
+					globalRef={globalRef}
+					stateToBeValue="art"
+				/>
+				<FloatingText
+					text="About"
+					location={[-3, -0.2, -0.6]}
+					globalRef={globalRef}
+					stateToBeValue="about"
+				/>
+				<FloatingText
+					text="Contact"
+					location={[-0.1, -3, -0.7]}
+					globalRef={globalRef}
+					stateToBeValue="contact"
+				/>
 			</TextPlain>
 		</>
 	);
