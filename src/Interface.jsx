@@ -2,6 +2,8 @@ import { Box, Button, Grid, Typography, Zoom } from "@mui/material";
 import { Container } from "@mui/system";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
+import Embed from "react-embed";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 
 const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
@@ -12,6 +14,8 @@ const Interface = ({ cameraRef, globalRef }) => {
 	const [displayState, setDisplayState] = useState("welcome");
 
 	const [pointerEvents, setPointerEvents] = useState("auto");
+
+	const { height, width } = useWindowDimensions();
 
 	useEffect(() => {
 		if (displayState === "home") {
@@ -74,178 +78,202 @@ const Interface = ({ cameraRef, globalRef }) => {
 		return () => clearInterval(id);
 	});
 
+	const welcome = (
+		<section id="welcome" hidden={displayState === "welcome" ? false : true}>
+			<Zoom in={displayState === "welcome"}>
+				<Grid
+					container
+					spacing={0}
+					direction="column"
+					alignItems="center"
+					justifyContent="center"
+					style={{ minHeight: "100vh" }}
+					zIndex="99"
+				>
+					<Grid item margin={5}>
+						<Typography
+							variant="h1"
+							fontSize="8vw"
+							color="white"
+							align="center"
+						>
+							Maiya Winter
+						</Typography>
+					</Grid>
+					<Grid item xs={3} margin={5}>
+						<Button
+							id="welcome-button"
+							onClick={() => {
+								animate(2, 4, -9, "home");
+								globalRef.current = "loading";
+								setDisplayState("loading");
+							}}
+							variant="contained"
+							size="large"
+						>
+							Start
+						</Button>
+					</Grid>
+				</Grid>
+			</Zoom>
+		</section>
+	);
+
+	const projects = (
+		<section id="projects">
+			<Grid
+				container
+				spacing={0}
+				direction="column"
+				alignItems="center"
+				justifyContent="center"
+				style={{ minHeight: "100vh" }}
+				zIndex="99"
+				position="absolute"
+			>
+				<Grid item margin={5}>
+					<Zoom in={displayState === "projects"}>
+						<Button
+							id="welcome-button"
+							onClick={() => {
+								animate(2, 4, -9, "home", 1);
+								globalRef.current = "loading";
+								setDisplayState("loading");
+							}}
+							variant="contained"
+							size="large"
+						>
+							Go back
+						</Button>
+					</Zoom>
+				</Grid>
+			</Grid>
+		</section>
+	);
+
+	const art = (
+		<section id="art" hidden={displayState === "art" ? false : true}>
+			<Zoom in={displayState === "art"}>
+				<Grid
+					container
+					spacing={1}
+					direction="column"
+					alignItems="center"
+					justifyContent="center"
+					style={{ minHeight: "100vh" }}
+					zIndex="99"
+					position="absolute"
+				>
+					<Grid item>
+						{/* TODO: Update Art */}
+						{/* <iframe
+							id="inlineFrameExample"
+							title="Inline Frame Example"
+							width={width - 10}
+							height={height / 1.1}
+							src="https://embedsocial.com/api/pro_hashtag/e3fdb4f9c4d022517d135311d6d8440c63c40506"
+							// frameborder="0"
+						></iframe> */}
+						<div
+							width={width - 10}
+							height={height / 1.1}
+							loading="lazy"
+							data-mc-src="1f54e010-c522-4747-8743-ff520b1e23af#instagram"
+						></div>
+					</Grid>
+					<Grid item>
+						<Button
+							onClick={() => {
+								animate(2, 4, -9, "home", 1);
+								globalRef.current = "loading";
+								setDisplayState("loading");
+							}}
+							variant="contained"
+							size="large"
+						>
+							Go Back
+						</Button>
+					</Grid>
+				</Grid>
+			</Zoom>
+		</section>
+	);
+
+	const about = (
+		<section id="about" hidden={displayState === "about" ? false : true}>
+			<Grid
+				container
+				spacing={0}
+				direction="column"
+				alignItems="center"
+				justifyContent="center"
+				style={{ minHeight: "100vh" }}
+				zIndex="99"
+				position="absolute"
+			>
+				<Grid item margin={5}>
+					<Zoom in={displayState === "about"}>
+						<Button
+							id="welcome-button"
+							onClick={() => {
+								animate(2, 4, -9, "home", 1);
+								globalRef.current = "loading";
+								setDisplayState("loading");
+							}}
+							variant="contained"
+							size="large"
+						>
+							Enter
+						</Button>
+					</Zoom>
+				</Grid>
+			</Grid>
+		</section>
+	);
+
+	const contact = (
+		<section id="contact" hidden={displayState === "contact" ? false : true}>
+			<Grid
+				container
+				spacing={0}
+				direction="column"
+				alignItems="center"
+				justifyContent="center"
+				style={{ minHeight: "100vh" }}
+				zIndex="99"
+				position="absolute"
+			>
+				<Grid item>
+					<Zoom in={displayState === "contact"}>
+						<Button
+							id="welcome-button"
+							onClick={() => {
+								animate(2, 4, -9, "home", 1);
+								globalRef.current = "loading";
+								setDisplayState("loading");
+							}}
+							variant="contained"
+							size="large"
+						>
+							Enter
+						</Button>
+					</Zoom>
+				</Grid>
+			</Grid>
+		</section>
+	);
+
 	return (
-		<Box className="interface" sx={{ pointerEvents: pointerEvents }}>
-			<Container>
-				<div id="displayState" hidden>
-					{displayState}
-				</div>
-				<section
-					id="welcome"
-					hidden={displayState === "welcome" ? false : true}
-				>
-					<Grid
-						container
-						spacing={0}
-						direction="column"
-						alignItems="center"
-						justifyContent="center"
-						style={{ minHeight: "100vh" }}
-						zIndex="99"
-					>
-						<Grid item margin={5}>
-							<Zoom in={displayState === "welcome"}>
-								<Typography
-									variant="h1"
-									fontSize="8vw"
-									color="white"
-									align="center"
-								>
-									Maiya Winter
-								</Typography>
-							</Zoom>
-						</Grid>
-						<Grid item xs={3} margin={5}>
-							<Zoom in={displayState === "welcome"}>
-								<Button
-									id="welcome-button"
-									onClick={() => {
-										animate(2, 4, -9, "home");
-										globalRef.current = "loading";
-										setDisplayState("loading");
-									}}
-									variant="contained"
-									size="large"
-								>
-									Enter
-								</Button>
-							</Zoom>
-						</Grid>
-					</Grid>
-				</section>
-				<section
-					id="projects"
-					hidden={displayState === "projects" ? false : true}
-				>
-					<Grid
-						container
-						spacing={0}
-						direction="column"
-						alignItems="center"
-						justifyContent="center"
-						style={{ minHeight: "100vh" }}
-						zIndex="99"
-						position="absolute"
-					>
-						<Grid item>
-							<Zoom in={displayState === "projects"}>
-								<Button
-									id="welcome-button"
-									onClick={() => {
-										animate(2, 4, -9, "home", 1);
-										globalRef.current = "loading";
-										setDisplayState("loading");
-									}}
-									variant="contained"
-									size="large"
-								>
-									Enter
-								</Button>
-							</Zoom>
-						</Grid>
-					</Grid>
-				</section>
-				<section id="art" hidden={displayState === "art" ? false : true}>
-					<Grid
-						container
-						spacing={0}
-						direction="column"
-						alignItems="center"
-						justifyContent="center"
-						style={{ minHeight: "100vh" }}
-						zIndex="99"
-						position="absolute"
-					>
-						<Grid item>
-							<Zoom in={displayState === "art"}>
-								<Button
-									id="welcome-button"
-									onClick={() => {
-										animate(2, 4, -9, "home", 1);
-										globalRef.current = "loading";
-										setDisplayState("loading");
-									}}
-									variant="contained"
-									size="large"
-								>
-									Enter
-								</Button>
-							</Zoom>
-						</Grid>
-					</Grid>
-				</section>
-				<section id="about" hidden={displayState === "about" ? false : true}>
-					<Grid
-						container
-						spacing={0}
-						direction="column"
-						alignItems="center"
-						justifyContent="center"
-						style={{ minHeight: "100vh" }}
-						zIndex="99"
-						position="absolute"
-					>
-						<Grid item>
-							<Zoom in={displayState === "about"}>
-								<Button
-									id="welcome-button"
-									onClick={() => {
-										animate(2, 4, -9, "home", 1);
-										globalRef.current = "loading";
-										setDisplayState("loading");
-									}}
-									variant="contained"
-									size="large"
-								>
-									Enter
-								</Button>
-							</Zoom>
-						</Grid>
-					</Grid>
-				</section>
-				<section
-					id="contact"
-					hidden={displayState === "contact" ? false : true}
-				>
-					<Grid
-						container
-						spacing={0}
-						direction="column"
-						alignItems="center"
-						justifyContent="center"
-						style={{ minHeight: "100vh" }}
-						zIndex="99"
-						position="absolute"
-					>
-						<Grid item>
-							<Zoom in={displayState === "contact"}>
-								<Button
-									id="welcome-button"
-									onClick={() => {
-										animate(2, 4, -9, "home", 1);
-										globalRef.current = "loading";
-										setDisplayState("loading");
-									}}
-									variant="contained"
-									size="large"
-								>
-									Enter
-								</Button>
-							</Zoom>
-						</Grid>
-					</Grid>
-				</section>
-			</Container>
+		<Box className="interface">
+			<span id="displayState" hidden>
+				{displayState}
+			</span>
+
+			{displayState === "welcome" && welcome}
+			{displayState === "projects" && projects}
+			{displayState === "art" && art}
+			{displayState === "about" && about}
+			{displayState === "contact" && contact}
 		</Box>
 	);
 };
