@@ -1,8 +1,6 @@
 import { Box, Button, Grid, Typography, Zoom } from "@mui/material";
-import { Container } from "@mui/system";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
-import Embed from "react-embed";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 
 const Interface = ({ cameraRef, globalRef }) => {
@@ -166,20 +164,14 @@ const Interface = ({ cameraRef, globalRef }) => {
 				>
 					<Grid item>
 						{/* TODO: Update Art */}
-						{/* <iframe
-							id="inlineFrameExample"
-							title="Inline Frame Example"
+
+						<iframe
+							src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
 							width={width - 10}
 							height={height / 1.1}
-							src="https://embedsocial.com/api/pro_hashtag/e3fdb4f9c4d022517d135311d6d8440c63c40506"
-							// frameborder="0"
-						></iframe> */}
-						<div
-							width={width - 10}
-							height={height / 1.1}
-							loading="lazy"
-							data-mc-src="1f54e010-c522-4747-8743-ff520b1e23af#instagram"
-						></div>
+							overflow={"hidden"}
+							style={{ overflow: "hidden", border: "0" }}
+						></iframe>
 					</Grid>
 					<Grid item>
 						<Button
