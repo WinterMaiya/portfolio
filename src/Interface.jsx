@@ -129,6 +129,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 				zIndex="99"
 				position="absolute"
 			>
+				<Grid></Grid>
 				<Grid item margin={5}>
 					<Zoom in={displayState === "projects"}>
 						<Button
@@ -203,6 +204,11 @@ const Interface = ({ cameraRef, globalRef }) => {
 				zIndex="99"
 				position="absolute"
 			>
+				<Grid item>
+					<Box sx={{ backgroundColor: "rgba(255,255,255" }}>
+						<Typography>Test</Typography>
+					</Box>
+				</Grid>
 				<Grid item margin={5}>
 					<Zoom in={displayState === "about"}>
 						<Button
