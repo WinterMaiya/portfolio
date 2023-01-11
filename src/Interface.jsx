@@ -141,12 +141,15 @@ const Interface = ({ cameraRef, globalRef }) => {
 				<Grid item>
 					<Overlay height={height} width={width}>
 						<Stack spacing={2}>
-							<Typography type="h1" sx={{ color: "success.main" }}>
+							<Typography
+								type="h1"
+								sx={{ color: "success.main", justifyContent: "center" }}
+							>
 								Test
 							</Typography>
-							<Typography type="h1" sx={{ color: "success.main" }}>
+							{/* <Typography type="h1" sx={{ color: "success.main" }}>
 								Test 2
-							</Typography>
+							</Typography> */}
 						</Stack>
 					</Overlay>
 				</Grid>
