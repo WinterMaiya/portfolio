@@ -1,8 +1,17 @@
-import { Box, Button, Grid, Typography, Zoom } from "@mui/material";
+import {
+	Box,
+	Button,
+	Grid,
+	Paper,
+	Stack,
+	styled,
+	Typography,
+	Zoom,
+} from "@mui/material";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import useWindowDimensions from "./hooks/useWindowDimensions";
-
+import Overlay from "./Overlay";
 const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
 	// Uses Material Ui for the styling
@@ -129,7 +138,18 @@ const Interface = ({ cameraRef, globalRef }) => {
 				zIndex="99"
 				position="absolute"
 			>
-				<Grid></Grid>
+				<Grid item>
+					<Overlay height={height} width={width}>
+						<Stack spacing={2}>
+							<Typography type="h1" sx={{ color: "success.main" }}>
+								Test
+							</Typography>
+							<Typography type="h1" sx={{ color: "success.main" }}>
+								Test 2
+							</Typography>
+						</Stack>
+					</Overlay>
+				</Grid>
 				<Grid item margin={5}>
 					<Zoom in={displayState === "projects"}>
 						<Button
@@ -164,15 +184,16 @@ const Interface = ({ cameraRef, globalRef }) => {
 					position="absolute"
 				>
 					<Grid item>
+						<Overlay>
+							<iframe
+								src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
+								width={width - 10}
+								height={height / 1.1}
+								overflow={"hidden"}
+								style={{ overflow: "hidden", border: "0" }}
+							></iframe>
+						</Overlay>
 						{/* TODO: Update Art */}
-
-						<iframe
-							src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
-							width={width - 10}
-							height={height / 1.1}
-							overflow={"hidden"}
-							style={{ overflow: "hidden", border: "0" }}
-						></iframe>
 					</Grid>
 					<Grid item>
 						<Button
