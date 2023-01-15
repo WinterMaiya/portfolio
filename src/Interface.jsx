@@ -1,7 +1,10 @@
 import {
 	Box,
 	Button,
+	Container,
+	Divider,
 	Grid,
+	Link,
 	Paper,
 	Stack,
 	styled,
@@ -12,6 +15,7 @@ import gsap from "gsap";
 import { useEffect, useState } from "react";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import Overlay from "./Overlay";
+import ProjectStack from "./ProjectStack";
 const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
 	// Uses Material Ui for the styling
@@ -127,163 +131,113 @@ const Interface = ({ cameraRef, globalRef }) => {
 	);
 
 	const projects = (
-		<section id="projects">
-			<Grid
-				container
-				spacing={0}
-				direction="column"
-				alignItems="center"
-				justifyContent="center"
-				style={{ minHeight: "100vh" }}
-				zIndex="99"
-				position="absolute"
-			>
-				<Grid item>
-					<Overlay height={height} width={width}>
-						<Stack spacing={2}>
-							<Typography
-								type="h1"
-								sx={{ color: "success.main", justifyContent: "center" }}
-							>
-								Test
-							</Typography>
-							{/* <Typography type="h1" sx={{ color: "success.main" }}>
-								Test 2
-							</Typography> */}
-						</Stack>
-					</Overlay>
-				</Grid>
-				<Grid item margin={5}>
-					<Zoom in={displayState === "projects"}>
-						<Button
-							id="welcome-button"
-							onClick={() => {
-								animate(2, 4, -9, "home", 1);
-								globalRef.current = "loading";
-								setDisplayState("loading");
-							}}
-							variant="contained"
-							size="large"
-						>
-							Go back
-						</Button>
-					</Zoom>
-				</Grid>
-			</Grid>
-		</section>
+		<Overlay height={height} width={width}>
+			<Typography variant="h1" sx={{ color: "white" }}>
+				Projects
+			</Typography>
+			<Divider />
+			<ProjectStack
+				title="Maiya Winter's Portfolio"
+				website=""
+				github="#"
+				description="My personal website made with React and Three.js"
+				techStack="Tech Stack: React, Node.js, Three.js, ReactThreeFiber, Material UI"
+			/>
+			<Divider />
+			<ProjectStack
+				title="Previews+"
+				website="https://previews-plus.vercel.app/"
+				github="https://github.com/WinterMaiya/previews-plus"
+				description="Created a streaming service application based heavily on Netflix, Hulu, and HBOmax that allows users to stream trailers for movies and tv
+								shows. Built using Next.js with Next-Auth authentication to allow users to quickly and securely log in. Developed backend with MySQL and
+								Prisma as an ORM. Users are able to watch, rate, and add trailers to their playlist using the TMDB api. Application also keeps track of
+								trailers watched using an internal rating system and recommends genres it thinks the user will enjoy.
+								"
+				techStack="Tech Stack: Node.js, Next.js, MySQL, Next-Auth, Prisma, Swiper, React, Axios, Bootstrap, Saas"
+			/>
+			<Divider />
+			<ProjectStack
+				title="Nom Nom Book"
+				website="#" //  http://www.nomnombook.com
+				github="https://github.com/WinterMaiya/nomnom_book"
+				description="Created a website that lets users create and share recipes with friends. Built using a primarily backend framework Flask while rendering
+								html pages using Jinja. Uses a heavy backend to allow users to add friends, share, add, rate, and find new recipes. Developed PostgreSQL
+								database to store data while integrating Spoonacular API to get recipes from different websites. Used a primarily object-oriented design to
+								better organize and use relevant data.
+								"
+				techStack="Tech Stack: Flask, Jinja, SQLAlchemy, PostgreSQL, WTForms, Flask Mail, Bcrypt, ItsDangerous, Cloudinary, Bootstrap.
+								"
+			/>
+			<div>
+				<Button
+					id="welcome-button"
+					onClick={() => {
+						animate(2, 4, -9, "home", 1);
+						globalRef.current = "loading";
+						setDisplayState("loading");
+					}}
+					variant="contained"
+					size="large"
+				>
+					Go back
+				</Button>
+			</div>
+		</Overlay>
 	);
 
 	const art = (
-		<section id="art" hidden={displayState === "art" ? false : true}>
-			<Zoom in={displayState === "art"}>
-				<Grid
-					container
-					spacing={1}
-					direction="column"
-					alignItems="center"
-					justifyContent="center"
-					style={{ minHeight: "100vh" }}
-					zIndex="99"
-					position="absolute"
+		<Overlay>
+			<Box>
+				<iframe
+					src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
+					// width={width}
+					// height={height}
+					style={{ overflow: "hidden", border: "0" }}
+				></iframe>
+			</Box>
+			<Box>
+				<Button
+					onClick={() => {
+						animate(2, 4, -9, "home", 1);
+						globalRef.current = "loading";
+						setDisplayState("loading");
+					}}
+					variant="contained"
+					size="large"
 				>
-					<Grid item>
-						<Overlay>
-							<iframe
-								src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
-								width={width - 10}
-								height={height / 1.1}
-								overflow={"hidden"}
-								style={{ overflow: "hidden", border: "0" }}
-							></iframe>
-						</Overlay>
-						{/* TODO: Update Art */}
-					</Grid>
-					<Grid item>
-						<Button
-							onClick={() => {
-								animate(2, 4, -9, "home", 1);
-								globalRef.current = "loading";
-								setDisplayState("loading");
-							}}
-							variant="contained"
-							size="large"
-						>
-							Go Back
-						</Button>
-					</Grid>
-				</Grid>
-			</Zoom>
-		</section>
+					Go Back
+				</Button>
+			</Box>
+		</Overlay>
 	);
 
-	const about = (
-		<section id="about" hidden={displayState === "about" ? false : true}>
-			<Grid
-				container
-				spacing={0}
-				direction="column"
-				alignItems="center"
-				justifyContent="center"
-				style={{ minHeight: "100vh" }}
-				zIndex="99"
-				position="absolute"
-			>
-				<Grid item>
-					<Box sx={{ backgroundColor: "rgba(255,255,255" }}>
-						<Typography>Test</Typography>
-					</Box>
-				</Grid>
-				<Grid item margin={5}>
-					<Zoom in={displayState === "about"}>
-						<Button
-							id="welcome-button"
-							onClick={() => {
-								animate(2, 4, -9, "home", 1);
-								globalRef.current = "loading";
-								setDisplayState("loading");
-							}}
-							variant="contained"
-							size="large"
-						>
-							Enter
-						</Button>
-					</Zoom>
-				</Grid>
-			</Grid>
-		</section>
-	);
+	const about = <Overlay></Overlay>;
+	// <Button
+	// 						id="welcome-button"
+	// 						onClick={() => {
+	// 							animate(2, 4, -9, "home", 1);
+	// 							globalRef.current = "loading";
+	// 							setDisplayState("loading");
+	// 						}}
+	// 						variant="contained"
+	// 						size="large"
+	// 					>
+	// 						Enter
+	// 					</Button>
 
-	const contact = (
-		<section id="contact" hidden={displayState === "contact" ? false : true}>
-			<Grid
-				container
-				spacing={0}
-				direction="column"
-				alignItems="center"
-				justifyContent="center"
-				style={{ minHeight: "100vh" }}
-				zIndex="99"
-				position="absolute"
-			>
-				<Grid item>
-					<Zoom in={displayState === "contact"}>
-						<Button
-							id="welcome-button"
-							onClick={() => {
-								animate(2, 4, -9, "home", 1);
-								globalRef.current = "loading";
-								setDisplayState("loading");
-							}}
-							variant="contained"
-							size="large"
-						>
-							Enter
-						</Button>
-					</Zoom>
-				</Grid>
-			</Grid>
-		</section>
-	);
+	const contact = <Overlay></Overlay>;
+	// 	<Button
+	// 	id="welcome-button"
+	// 	onClick={() => {
+	// 		animate(2, 4, -9, "home", 1);
+	// 		globalRef.current = "loading";
+	// 		setDisplayState("loading");
+	// 	}}
+	// 	variant="contained"
+	// 	size="large"
+	// >
+	// 	Enter
+	// </Button>
 
 	return (
 		<Box className="interface">
