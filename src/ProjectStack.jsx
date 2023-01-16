@@ -22,6 +22,7 @@ const ProjectStack = ({
 					color={website === "#" ? "error" : "secondary"}
 					variant="contained"
 					sx={{ padding: 0.5 }}
+					target="_blank"
 					// disabled={website === "#" ? true : false}
 				>
 					{website === "#" ? "Offline" : "Website"}
@@ -32,6 +33,7 @@ const ProjectStack = ({
 					color={"secondary"}
 					variant="contained"
 					sx={{ padding: 0.5 }}
+					target="_blank"
 					// disabled={website === "#" ? true : false}
 				>
 					Github

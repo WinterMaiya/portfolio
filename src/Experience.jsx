@@ -12,8 +12,8 @@ const Experience = ({ globalRef }) => {
 
 	// Properties for the 3D galaxy and stars
 	const galaxyMainProperties = {
-		count: 730000,
-		size: 0.05,
+		count: 330000,
+		size: 0.06,
 		radius: 9,
 		branches: 4,
 		spin: 0.6,
@@ -25,7 +25,7 @@ const Experience = ({ globalRef }) => {
 	};
 
 	const galaxyCenterProperties = {
-		count: 300000,
+		count: 200000,
 		size: 0.03,
 		radius: 0.5,
 		branches: 3,
@@ -38,7 +38,7 @@ const Experience = ({ globalRef }) => {
 	};
 
 	const galaxyCenterOuter = {
-		count: 500000,
+		count: 200000,
 		size: 0.05,
 		radius: 5,
 		branches: 3,
@@ -75,30 +75,31 @@ const Experience = ({ globalRef }) => {
 			<Stars id="Stars" {...starsProperties} />
 			<BlackHole id="BlackHole" />
 			<TextPlain>
+				{/* TODO: Make text variable. */}
 				<FloatingText
 					text="Projects"
-					location={[3, 0, -0.5]}
+					location={[0.5, -1.5, -0.5]}
 					globalRef={globalRef}
 					stateToBeValue="projects"
 				/>
 				<FloatingText
 					text="Art"
-					location={[0.1, 3, -0.4]}
+					location={[-1.5, 1, -0.5]}
 					globalRef={globalRef}
 					stateToBeValue="art"
 				/>
 				<FloatingText
 					text="About"
-					location={[-3, -0.2, -0.6]}
+					location={[1.5, 1.5, -0.5]}
 					globalRef={globalRef}
 					stateToBeValue="about"
 				/>
-				<FloatingText
+				{/* <FloatingText
 					text="Contact"
 					location={[-0.1, -3, -0.7]}
 					globalRef={globalRef}
 					stateToBeValue="contact"
-				/>
+				/> */}
 			</TextPlain>
 		</>
 	);

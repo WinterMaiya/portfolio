@@ -238,16 +238,19 @@ const Interface = ({ cameraRef, globalRef }) => {
 				</Box>
 				<Box>
 					<Box>
-						<Link href="https://github.com/WinterMaiya">
+						<Link href="https://github.com/WinterMaiya" target="_blank">
 							<GitHubIcon color="secondary" fontSize="large" />
 						</Link>
-						<Link href="https://github.com/WinterMaiya">
+						<Link
+							href="https://www.linkedin.com/in/maiya-winter/"
+							target="_blank"
+						>
 							<LinkedInIcon color="primary" fontSize="large" />
 						</Link>
-						<Link href="https://github.com/WinterMaiya">
+						<Link href="https://www.instagram.com/maiyawinter/" target="_blank">
 							<InstagramIcon color="warning" fontSize="large" />
 						</Link>
-						<Link href="https://github.com/WinterMaiya">
+						<Link href="mailto:wintermaiya@gmail.com" target="_blank">
 							<EmailIcon color="success" fontSize="large" />
 						</Link>
 					</Box>
@@ -267,10 +270,31 @@ const Interface = ({ cameraRef, globalRef }) => {
 				</Box>
 			</Stack>
 			<Typography variant="body1" sx={{ color: "white" }}>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam labore
-				culpa blanditiis voluptatum voluptates nostrum libero modi ipsum iusto.
-				Veritatis quibusdam repellat ad quam! Asperiores dolorum quaerat quia
-				excepturi praesentium!
+				Hi! My name is Maiya Winter. As a recent graduate of the Springboard
+				coding bootcamp and a skilled full stack engineer with experience in
+				React.js, Next.js, Python, PostgreSQL, and MySQL, I bring a strong
+				foundation in web development technologies and a unique perspective to
+				frontend development thanks to my digital art background.
+			</Typography>
+			<Typography variant="body1" sx={{ color: "white" }}>
+				I have a passion for visual design and have honed my skills in a variety
+				of mediums, including digital art and graphic design. In my previous
+				role, I utilized my skills in React.js and Next.js to build intuitive
+				and responsive user interfaces, and worked with Python, PostgreSQL, and
+				MySQL to build a reliable and efficient backend. I am a proactive and
+				detail-oriented team player who enjoys working with others to find
+				creative solutions to complex problems. I am excited to bring my skills
+				and experience to a new challenge as a full stack engineer.
+			</Typography>
+			<Typography variant="body1" sx={{ color: "white" }}>
+				Additionally, I have done so much research on coding (both inside and
+				outside of the Springboard Software Engineering Bootcamp) for my own
+				self-improvement. I have recently completed a software project dubbed
+				"Previews+"; A streaming service that lets you see your favorite movies
+				and shows previews. This project utilized React.js, Next.js, Prisma, and
+				External API's. I have also completed a project called "The Nom Nom
+				Book"; a community cookbook that utilizes Python, Flask, PostgreSQL, and
+				an external Spoonacular API.
 			</Typography>
 			<Divider variant="button" color="white" />
 			<BackButton />
@@ -284,6 +308,12 @@ const Interface = ({ cameraRef, globalRef }) => {
 			displayState={displayState}
 			id="contact"
 		>
+			<Typography variant="body1" sx={{ color: "white" }}>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam labore
+				culpa blanditiis voluptatum voluptates nostrum libero modi ipsum iusto.
+				Veritatis quibusdam repellat ad quam! Asperiores dolorum quaerat quia
+				excepturi praesentium!
+			</Typography>
 			<BackButton />
 		</Overlay>
 	);
