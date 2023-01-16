@@ -234,7 +234,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 				sx={{ alignItems: "center", justifyContent: "center" }}
 			>
 				<Box>
-					<img src="/headshot.jpg" width={300} />
+					<img src="/portfolio/headshot.jpg" alt="Maiya Headshot" width={300} />
 				</Box>
 				<Box>
 					<Box>

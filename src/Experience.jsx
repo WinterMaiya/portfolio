@@ -72,7 +72,7 @@ const Experience = ({ globalRef }) => {
 			<Galaxy id="Galaxy Main" {...galaxyMainProperties} />
 			<Galaxy id="Galaxy Center" {...galaxyCenterProperties} />
 			<Galaxy id="Galaxy Center Outer" {...galaxyCenterOuter} />
-			<Stars id="Stars" {...starsProperties} />
+			{/* <Stars id="Stars" {...starsProperties} /> */}
 			<BlackHole id="BlackHole" />
 			<TextPlain>
 				{/* TODO: Make text variable. */}

@@ -26,7 +26,7 @@ const Stars = ({
 
 	const props = useTexture({
 		// Texture hook for loading in the stars texture
-		map: "/star.png",
+		map: "portfolio/star.png",
 	});
 	return (
 		<points ref={starsRef}>
