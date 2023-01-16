@@ -63,7 +63,7 @@ const Galaxy = ({
 
 	const props = useTexture({
 		// Texure hook for loading in the stars texture
-		map: "/star.png",
+		map: "/portfolio/star.png",
 	});
 	return (
 		<points ref={galaxyRef}>
