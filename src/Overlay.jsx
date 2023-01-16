@@ -1,7 +1,6 @@
-import { Box, Container, Stack } from "@mui/material";
-import { breakpoints } from "@mui/system";
+import { Box, Container, Stack, Zoom } from "@mui/material";
 
-const Overlay = ({ children, height, width }) => {
+const Overlay = ({ children, height, width, displayState, id }) => {
 	// width={width - 10}
 	// height={height / 1.1}
 
@@ -20,12 +19,14 @@ const Overlay = ({ children, height, width }) => {
 
 	return (
 		<Box sx={styling}>
-			<Container disableGutters>
-				<Box>
-					<Stack spacing={2} overflow="auto" maxHeight={height}>
-						{children}
-					</Stack>
-				</Box>
+			<Container disableGutters sx={{ margin: 1 }}>
+				<Zoom in={displayState === id}>
+					<Box>
+						<Stack spacing={2} overflow="auto" maxHeight={height / 1.01}>
+							{children}
+						</Stack>
+					</Box>
+				</Zoom>
 			</Container>
 		</Box>
 	);

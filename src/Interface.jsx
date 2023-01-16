@@ -1,21 +1,23 @@
 import {
 	Box,
 	Button,
-	Container,
 	Divider,
 	Grid,
 	Link,
-	Paper,
-	Stack,
-	styled,
 	Typography,
 	Zoom,
 } from "@mui/material";
+import { Stack } from "@mui/system";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import Overlay from "./Overlay";
 import ProjectStack from "./ProjectStack";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from "@mui/icons-material/Email";
+import { Email } from "@mui/icons-material";
 const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
 	// Uses Material Ui for the styling
@@ -24,7 +26,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 	// loading states are: loading, projects-loading, art-loading, about-loading, contact-loading
 	const [displayState, setDisplayState] = useState("welcome");
 
-	const [pointerEvents, setPointerEvents] = useState("auto");
+	const [, setPointerEvents] = useState("auto");
 
 	const { height, width } = useWindowDimensions();
 
@@ -40,7 +42,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 		if (displayState !== globalRef.current) {
 			setDisplayState(globalRef.current);
 		}
-	}, [globalRef.current]);
+	}, [globalRef, displayState]);
 
 	const animate = (newX, newY, newZ, state, duration = 3) => {
 		// Animates the camera to the current position
@@ -66,7 +68,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 		return (
 			<Box>
 				<Button
-					id="welcome-button"
+					id="back-button"
 					onClick={() => {
 						animate(2, 4, -9, "home", 1);
 						globalRef.current = "loading";
@@ -103,6 +105,8 @@ const Interface = ({ cameraRef, globalRef }) => {
 					animate(0.1, 67, -0.2, "contact", 1);
 					globalRef.current = "loading";
 					setDisplayState("loading");
+					break;
+				default:
 					break;
 			}
 		}, 100);
@@ -151,11 +155,16 @@ const Interface = ({ cameraRef, globalRef }) => {
 	);
 
 	const projects = (
-		<Overlay height={height} width={width}>
+		<Overlay
+			height={height}
+			width={width}
+			displayState={displayState}
+			id="projects"
+		>
 			<Typography variant="h1" sx={{ color: "white" }}>
 				Projects
 			</Typography>
-			<Divider />
+			<Divider variant="button" color="white" />
 			<ProjectStack
 				title="Maiya Winter's Portfolio"
 				website=""
@@ -163,7 +172,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 				description="My personal website made with React and Three.js"
 				techStack="Tech Stack: React, Node.js, Three.js, ReactThreeFiber, Material UI"
 			/>
-			<Divider />
+			<Divider variant="button" color="white" />
 			<ProjectStack
 				title="Previews+"
 				website="https://previews-plus.vercel.app/"
@@ -175,7 +184,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 								"
 				techStack="Tech Stack: Node.js, Next.js, MySQL, Next-Auth, Prisma, Swiper, React, Axios, Bootstrap, Saas"
 			/>
-			<Divider />
+			<Divider variant="button" color="white" />
 			<ProjectStack
 				title="Nom Nom Book"
 				website="#" //  http://www.nomnombook.com
@@ -193,27 +202,88 @@ const Interface = ({ cameraRef, globalRef }) => {
 	);
 
 	const art = (
-		<Overlay height={height} width={width}>
+		<Overlay height={height} width={width} displayState={displayState} id="art">
 			<Box>
 				<iframe
+					title="Maiya's Instagram Widget"
 					src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
 					width={width / 2}
 					// height={height}
 					style={{ overflow: "hidden", border: "0" }}
 				></iframe>
 			</Box>
+			<Divider variant="button" color="white" />
 			<BackButton />
 		</Overlay>
 	);
 
 	const about = (
-		<Overlay height={height} width={width}>
+		<Overlay
+			height={height}
+			width={width}
+			displayState={displayState}
+			id="about"
+		>
+			<Typography variant="h1" sx={{ color: "white" }}>
+				Maiya Winter
+			</Typography>
+			<Stack
+				direction={{ sm: "column", md: "row" }}
+				divider={<Divider orientation="vertical" flexItem />}
+				spacing={2}
+				sx={{ alignItems: "center", justifyContent: "center" }}
+			>
+				<Box>
+					<img src="/headshot.jpg" width={300} />
+				</Box>
+				<Box>
+					<Box>
+						<Link href="https://github.com/WinterMaiya">
+							<GitHubIcon color="secondary" fontSize="large" />
+						</Link>
+						<Link href="https://github.com/WinterMaiya">
+							<LinkedInIcon color="primary" fontSize="large" />
+						</Link>
+						<Link href="https://github.com/WinterMaiya">
+							<InstagramIcon color="warning" fontSize="large" />
+						</Link>
+						<Link href="https://github.com/WinterMaiya">
+							<EmailIcon color="success" fontSize="large" />
+						</Link>
+					</Box>
+					<Stack spacing={2}>
+						<Typography variant="h6" sx={{ color: "white" }}>
+							Software Engineer | Artist | Designer
+						</Typography>
+						<Divider variant="button" color="white" />
+						<Typography sx={{ color: "white" }}>Tech Stack:</Typography>
+						<Typography variant="overline" sx={{ color: "white" }}>
+							JavaScript | Python | HTML | CSS | SQL
+						</Typography>
+						<Typography variant="overline" sx={{ color: "white" }}>
+							React.js | Next.js | Three.js | Express.js | MySQL | PostgreSQL
+						</Typography>
+					</Stack>
+				</Box>
+			</Stack>
+			<Typography variant="body1" sx={{ color: "white" }}>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam labore
+				culpa blanditiis voluptatum voluptates nostrum libero modi ipsum iusto.
+				Veritatis quibusdam repellat ad quam! Asperiores dolorum quaerat quia
+				excepturi praesentium!
+			</Typography>
+			<Divider variant="button" color="white" />
 			<BackButton />
 		</Overlay>
 	);
 
 	const contact = (
-		<Overlay height={height} width={width}>
+		<Overlay
+			height={height}
+			width={width}
+			displayState={displayState}
+			id="contact"
+		>
 			<BackButton />
 		</Overlay>
 	);
