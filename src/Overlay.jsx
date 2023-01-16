@@ -12,7 +12,7 @@ const Overlay = ({ children, height, width }) => {
 		height: height,
 		width: width,
 		textAlign: "center",
-		backgroundColor: "rgba(0, 0, 0, 0.85)",
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 		alignItems: "center",
 		justifyContent: "center",
 		shadow: "1",
@@ -21,7 +21,6 @@ const Overlay = ({ children, height, width }) => {
 	return (
 		<Box sx={styling}>
 			<Container disableGutters>
-				{" "}
 				<Box>
 					<Stack spacing={2} overflow="auto" maxHeight={height}>
 						{children}

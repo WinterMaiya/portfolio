@@ -61,6 +61,26 @@ const Interface = ({ cameraRef, globalRef }) => {
 		}
 	};
 
+	const BackButton = () => {
+		// Button to go back to the home page
+		return (
+			<Box>
+				<Button
+					id="welcome-button"
+					onClick={() => {
+						animate(2, 4, -9, "home", 1);
+						globalRef.current = "loading";
+						setDisplayState("loading");
+					}}
+					variant="contained"
+					size="large"
+				>
+					Go Back
+				</Button>
+			</Box>
+		);
+	};
+
 	useEffect(() => {
 		const id = setInterval(() => {
 			switch (globalRef.current) {
@@ -168,76 +188,35 @@ const Interface = ({ cameraRef, globalRef }) => {
 				techStack="Tech Stack: Flask, Jinja, SQLAlchemy, PostgreSQL, WTForms, Flask Mail, Bcrypt, ItsDangerous, Cloudinary, Bootstrap.
 								"
 			/>
-			<div>
-				<Button
-					id="welcome-button"
-					onClick={() => {
-						animate(2, 4, -9, "home", 1);
-						globalRef.current = "loading";
-						setDisplayState("loading");
-					}}
-					variant="contained"
-					size="large"
-				>
-					Go back
-				</Button>
-			</div>
+			<BackButton />
 		</Overlay>
 	);
 
 	const art = (
-		<Overlay>
+		<Overlay height={height} width={width}>
 			<Box>
 				<iframe
 					src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
-					// width={width}
+					width={width / 2}
 					// height={height}
 					style={{ overflow: "hidden", border: "0" }}
 				></iframe>
 			</Box>
-			<Box>
-				<Button
-					onClick={() => {
-						animate(2, 4, -9, "home", 1);
-						globalRef.current = "loading";
-						setDisplayState("loading");
-					}}
-					variant="contained"
-					size="large"
-				>
-					Go Back
-				</Button>
-			</Box>
+			<BackButton />
 		</Overlay>
 	);
 
-	const about = <Overlay></Overlay>;
-	// <Button
-	// 						id="welcome-button"
-	// 						onClick={() => {
-	// 							animate(2, 4, -9, "home", 1);
-	// 							globalRef.current = "loading";
-	// 							setDisplayState("loading");
-	// 						}}
-	// 						variant="contained"
-	// 						size="large"
-	// 					>
-	// 						Enter
-	// 					</Button>
+	const about = (
+		<Overlay height={height} width={width}>
+			<BackButton />
+		</Overlay>
+	);
 
-	const contact = <Overlay></Overlay>;
-	// 	<Button
-	// 	id="welcome-button"
-	// 	onClick={() => {
-	// 		animate(2, 4, -9, "home", 1);
-	// 		globalRef.current = "loading";
-	// 		setDisplayState("loading");
-	// 	}}
-	// 	variant="contained"
-	// 	size="large"
-	// >
-	// 	Enter
-	// </Button>
+	const contact = (
+		<Overlay height={height} width={width}>
+			<BackButton />
+		</Overlay>
+	);
 
 	return (
 		<Box className="interface">
