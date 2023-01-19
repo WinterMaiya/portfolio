@@ -1,4 +1,4 @@
-import { Plane, Ring, Sphere, Torus } from "@react-three/drei";
+import { Torus } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 

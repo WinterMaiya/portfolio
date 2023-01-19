@@ -1,8 +1,7 @@
-import { PointMaterial, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
-import { Points } from "three";
 
 const Galaxy = ({
 	count = 500000,

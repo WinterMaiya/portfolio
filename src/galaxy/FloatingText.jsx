@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const FloatingText = ({
 	text = "No Text Entered",
