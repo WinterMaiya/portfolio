@@ -17,6 +17,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
+
+import "./Interface.css";
 const Interface = ({ cameraRef, globalRef }) => {
 	// Creates a interface that goes above the 3D canvas.
 	// Uses Material Ui for the styling
@@ -328,6 +330,12 @@ const Interface = ({ cameraRef, globalRef }) => {
 			{displayState === "art" && art}
 			{displayState === "about" && about}
 			{displayState === "contact" && contact}
+			<audio className="audio" controls autoPlay>
+				<source
+					src="/portfolio/space-journey-hartzmann.mp3"
+					type="audio/mpeg"
+				/>
+			</audio>
 		</Box>
 	);
 };

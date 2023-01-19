@@ -6,7 +6,7 @@ import {
 	Stats,
 } from "@react-three/drei";
 import Interface from "./Interface";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 function App() {
 	// Rendering the application
@@ -24,7 +24,7 @@ function App() {
 					position={[22, 36, 22]}
 					ref={cameraRef}
 				/>
-				<Stats />
+				{/* <Stats /> */}
 				<PerformanceMonitor />
 				<Experience globalRef={globalRef} />
 			</Canvas>
