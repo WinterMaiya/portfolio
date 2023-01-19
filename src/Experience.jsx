@@ -1,6 +1,4 @@
-import { Box, Button } from "@mui/material";
-import { Html, OrbitControls, Text } from "@react-three/drei";
-import { useEffect } from "react";
+import { OrbitControls } from "@react-three/drei";
 import BlackHole from "./galaxy/BlackHole";
 import FloatingText from "./galaxy/FloatingText";
 import Galaxy from "./galaxy/Galaxy";

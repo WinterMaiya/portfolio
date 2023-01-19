@@ -2,6 +2,7 @@ import { PointMaterial, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
+import { Points } from "three";
 
 const Galaxy = ({
 	count = 500000,
@@ -84,7 +85,7 @@ const Galaxy = ({
 					itemSize={3}
 				/>
 			</bufferGeometry>
-			<PointMaterial
+			{/* <PointMaterial
 				{...props}
 				attach="material"
 				transparent={true}
@@ -94,16 +95,20 @@ const Galaxy = ({
 				depthWrite={false}
 				blending={THREE.AdditiveBlending}
 				color={"#ffffff"}
-			/>
-			{/* <pointsMaterial
+			/> */}
+			<pointsMaterial
+				{...props}
 				attach="material"
+				transparent={true}
 				// map={CircleImg}
 				size={size}
+				depthWrite={false}
 				blending={THREE.AdditiveBlending}
 				AdditiveBlending={true}
 				sizeAttenuation={true}
 				vertexColors={true}
-			/> */}
+				color={"#ffffff"}
+			/>
 		</points>
 	);
 };
