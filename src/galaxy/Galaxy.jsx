@@ -19,6 +19,9 @@ const Galaxy = ({
 
 	useFrame(() => {
 		galaxyRef.current.rotation.y += rotation;
+		// galaxyRef.current.instanceMatrix.needsUpdate = true;
+		// galaxyRef.current.instanceColor.needsUpdate = true;
+		galaxyRef.current.material.needsUpdate = true;
 	});
 	const positions = new Float32Array(count * 3);
 	const colors = new Float32Array(count * 3);

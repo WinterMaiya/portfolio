@@ -1,4 +1,4 @@
-import { Environment, PointMaterial, useTexture } from "@react-three/drei";
+import { PointMaterial, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
@@ -13,6 +13,7 @@ const Stars = ({
 
 	useFrame(() => {
 		starsRef.current.rotation.y += rotation;
+		starsRef.current.material.needsUpdate = true;
 	});
 	const positions = new Float32Array(count * 3);
 
