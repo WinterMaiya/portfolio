@@ -1,10 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
-import {
-	PerformanceMonitor,
-	PerspectiveCamera,
-	Stats,
-} from "@react-three/drei";
+import { PerformanceMonitor, PerspectiveCamera } from "@react-three/drei";
 import Interface from "./Interface";
 import { useRef } from "react";
 
