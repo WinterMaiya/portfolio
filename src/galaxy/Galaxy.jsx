@@ -15,6 +15,7 @@ const Galaxy = ({
 	size = 0.05,
 	rotation = 0.005,
 }) => {
+	// TODO: Change texture
 	const galaxyRef = useRef();
 
 	useFrame(() => {
