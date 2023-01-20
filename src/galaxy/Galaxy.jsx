@@ -68,6 +68,8 @@ const Galaxy = ({
 		// Texture hook for loading in the stars texture
 		map: "/portfolio/star.png",
 	});
+
+	console.log(galaxyRef);
 	return (
 		<points ref={galaxyRef}>
 			<bufferGeometry attach={"geometry"}>
