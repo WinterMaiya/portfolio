@@ -77,13 +77,13 @@ const Galaxy = ({
 				<bufferAttribute
 					attach="attributes-position"
 					array={positions}
-					count={positions.length}
+					count={positions.length / 2}
 					itemSize={3}
 				/>
 				<bufferAttribute
 					attach="attributes-color"
 					array={colors}
-					count={colors.length}
+					count={colors.length / 2}
 					itemSize={3}
 				/>
 			</bufferGeometry>
