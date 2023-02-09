@@ -77,13 +77,13 @@ const Galaxy = ({
 				<bufferAttribute
 					attach="attributes-position"
 					array={positions}
-					count={positions.length / 2}
+					count={positions.length / 3}
 					itemSize={3}
 				/>
 				<bufferAttribute
 					attach="attributes-color"
 					array={colors}
-					count={colors.length / 2}
+					count={colors.length / 3}
 					itemSize={3}
 				/>
 			</bufferGeometry>
@@ -108,8 +108,8 @@ const Galaxy = ({
 				blending={THREE.AdditiveBlending}
 				// AdditiveBlending={true}
 				sizeAttenuation={true}
-				// vertexColors={true}
-				color={"#ffffff"}
+				vertexColors={true}
+				// color={"#ffffff"}
 			/>
 		</points>
 	);
