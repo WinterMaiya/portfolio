@@ -66,7 +66,7 @@ const Experience = ({ globalRef }) => {
 		<>
 			<ambientLight />
 			<pointLight />
-			<OrbitControls />
+			<OrbitControls minDistance={3} maxDistance={50} />
 			<Galaxy id="Galaxy Main" {...galaxyMainProperties} />
 			<Galaxy id="Galaxy Center" {...galaxyCenterProperties} />
 			<Galaxy id="Galaxy Center Outer" {...galaxyCenterOuter} />
