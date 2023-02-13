@@ -1,4 +1,5 @@
-import { Canvas } from "@react-three/fiber";
+import * as THREE from "three";
+import { Canvas, extend } from "@react-three/fiber";
 import Experience from "./Experience";
 import {
 	Effects,
@@ -8,7 +9,13 @@ import {
 } from "@react-three/drei";
 import Interface from "./Interface";
 import { useRef } from "react";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 
+extend({ EffectComposer, RenderPass, UnrealBloomPass });
+
+// TODO: Add bloom effect
 function App() {
 	// Rendering the application
 	// Canvas refers to the 3D canvas while Interface refers to the HTML ui above.
@@ -25,7 +32,6 @@ function App() {
 					position={[22, 36, 22]}
 					ref={cameraRef}
 				/>
-				<Effects disableGamma></Effects>
 				<Stats />
 				<PerformanceMonitor />
 				<Experience globalRef={globalRef} />

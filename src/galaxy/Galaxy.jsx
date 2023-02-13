@@ -106,6 +106,7 @@ const Galaxy = ({
 				size={size}
 				depthWrite={false}
 				blending={THREE.AdditiveBlending}
+				emissive={[0.5, 0.5, 0.5]}
 				// AdditiveBlending={true}
 				sizeAttenuation={true}
 				vertexColors={true}
