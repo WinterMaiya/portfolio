@@ -35,7 +35,7 @@ const Stars = ({
 				<bufferAttribute
 					attach="attributes-position"
 					array={positions}
-					count={positions.length}
+					count={positions.length / 3}
 					itemSize={3}
 				/>
 			</bufferGeometry>

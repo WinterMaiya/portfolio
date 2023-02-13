@@ -10,8 +10,8 @@ const Experience = ({ globalRef }) => {
 
 	// Properties for the 3D galaxy and stars
 	const galaxyMainProperties = {
-		count: 330000,
-		size: 0.06,
+		count: 20000,
+		size: 0.1,
 		radius: 9,
 		branches: 4,
 		spin: 0.6,
@@ -23,24 +23,24 @@ const Experience = ({ globalRef }) => {
 	};
 
 	const galaxyCenterProperties = {
-		count: 200000,
-		size: 0.03,
-		radius: 0.5,
+		count: 6000,
+		size: 0.1,
+		radius: 2,
 		branches: 3,
-		spin: 1000,
+		spin: 100,
 		randomness: 0.6,
 		randomnessPower: 3,
 		insideColor: "#FE8966",
 		outsideColor: "#FE8966",
-		rotation: 0.005,
+		rotation: 0.003,
 	};
 
 	const galaxyCenterOuter = {
-		count: 200000,
-		size: 0.05,
-		radius: 5,
+		count: 10000,
+		size: 0.1,
+		radius: 7,
 		branches: 3,
-		spin: 100,
+		spin: 50,
 		randomness: 0.5,
 		randomnessPower: 3,
 		insideColor: "#FE8966",
@@ -49,7 +49,7 @@ const Experience = ({ globalRef }) => {
 	};
 
 	const starsProperties = {
-		count: 300000,
+		count: 100000,
 		size: 0.1,
 		radius: 125,
 		rotation: 0.0001,
