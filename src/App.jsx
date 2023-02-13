@@ -1,6 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
-import { PerformanceMonitor, PerspectiveCamera, Stats } from "@react-three/drei";
+import {
+	Effects,
+	PerformanceMonitor,
+	PerspectiveCamera,
+	Stats,
+} from "@react-three/drei";
 import Interface from "./Interface";
 import { useRef } from "react";
 
@@ -20,6 +25,7 @@ function App() {
 					position={[22, 36, 22]}
 					ref={cameraRef}
 				/>
+				<Effects disableGamma></Effects>
 				<Stats />
 				<PerformanceMonitor />
 				<Experience globalRef={globalRef} />
