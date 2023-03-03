@@ -25,6 +25,7 @@ const FloatingText = ({
 		<Html center position={location}>
 			<Box ref={textRef} hidden={!visible} sx={{ transition: "width 10s" }}>
 				<Button
+					className="blue-glow"
 					variant="contained"
 					onClick={() => {
 						globalRef.current = stateToBeValue + "-loading";
