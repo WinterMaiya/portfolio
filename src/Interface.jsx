@@ -138,6 +138,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 					</Grid>
 					<Grid item xs={3} margin={5}>
 						<Button
+							className="blue-glow"
 							id="welcome-button"
 							onClick={() => {
 								animate(2, 4, -9, "home");
@@ -303,6 +304,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 	);
 
 	const contact = (
+		// TODO: Complete this page and add it
 		<Overlay
 			height={height}
 			width={width}
