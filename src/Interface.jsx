@@ -69,6 +69,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 		return (
 			<Box>
 				<Button
+					sx={{ margin: "30px" }}
 					id="back-button"
 					onClick={() => {
 						animate(2, 4, -9, "home", 1);
@@ -77,6 +78,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 					}}
 					variant="contained"
 					size="large"
+					className="blue-glow"
 				>
 					Go Back
 				</Button>
