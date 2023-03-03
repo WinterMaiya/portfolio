@@ -3,6 +3,9 @@
   <img src="https://media.giphy.com/media/oy3pwvu2WbY22fOWbz/giphy.gif" width=250"/>                                                                              
 </div>
 
+This project is still in development and is showcasing Maiya Winter's projects, and art
+https://wintermaiya.github.io/portfolio/
+=======
 ***still in development, new features coming soon***
 
 My portfolio is built using Three.js to create a fun interactive medium to explore my projects, art and resume.

@@ -69,6 +69,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 		return (
 			<Box>
 				<Button
+					sx={{ margin: "30px" }}
 					id="back-button"
 					onClick={() => {
 						animate(2, 4, -9, "home", 1);
@@ -77,6 +78,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 					}}
 					variant="contained"
 					size="large"
+					className="blue-glow"
 				>
 					Go Back
 				</Button>
@@ -138,6 +140,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 					</Grid>
 					<Grid item xs={3} margin={5}>
 						<Button
+							className="blue-glow"
 							id="welcome-button"
 							onClick={() => {
 								animate(2, 4, -9, "home");
@@ -207,7 +210,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 			<Box>
 				<iframe
 					title="Maiya's Instagram Widget"
-					src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
+					src="https://cdn.lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
 					width={width / 2}
 					// height={height}
 					style={{ overflow: "hidden", border: "0" }}
@@ -303,6 +306,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 	);
 
 	const contact = (
+		// TODO: Complete this page and add it
 		<Overlay
 			height={height}
 			width={width}
