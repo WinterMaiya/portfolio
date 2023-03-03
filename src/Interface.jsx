@@ -207,7 +207,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 			<Box>
 				<iframe
 					title="Maiya's Instagram Widget"
-					src="//lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
+					src="https://cdn.lightwidget.com/widgets/708943fc60f05b5596ebdab58aa89022.html"
 					width={width / 2}
 					// height={height}
 					style={{ overflow: "hidden", border: "0" }}
