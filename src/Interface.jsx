@@ -171,8 +171,8 @@ const Interface = ({ cameraRef, globalRef }) => {
 			<Divider variant="button" color="white" />
 			<ProjectStack
 				title="Maiya Winter's Portfolio"
-				website=""
-				github="#"
+				website="none"
+				github="https://github.com/WinterMaiya/portfolio"
 				description="My personal website made with React and Three.js"
 				techStack="Tech Stack: React, Node.js, Three.js, ReactThreeFiber, Material UI"
 			/>
@@ -191,7 +191,7 @@ const Interface = ({ cameraRef, globalRef }) => {
 			<Divider variant="button" color="white" />
 			<ProjectStack
 				title="Nom Nom Book"
-				website="#" //  http://www.nomnombook.com
+				website="http://www.nomnombook.com" //  http://www.nomnombook.com
 				github="https://github.com/WinterMaiya/nomnom_book"
 				description="Created a website that lets users create and share recipes with friends. Built using a primarily backend framework Flask while rendering
 								html pages using Jinja. Uses a heavy backend to allow users to add friends, share, add, rate, and find new recipes. Developed PostgreSQL
