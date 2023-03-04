@@ -16,17 +16,21 @@ const ProjectStack = ({
 				{title}
 			</Typography>
 			<Box sx={{ margin: 1 }}>
-				<Button
-					href={website}
-					color={website === "#" ? "error" : "secondary"}
-					variant="contained"
-					sx={{ padding: 0.5 }}
-					target="_blank"
-					// disabled={website === "#" ? true : false}
-				>
-					{website === "#" ? "Offline" : "Website"}
-				</Button>
-				<span> | </span>
+				{website !== "none" && (
+					<span>
+						<Button
+							href={website}
+							color={website === "#" ? "error" : "secondary"}
+							variant="contained"
+							sx={{ padding: 0.5 }}
+							target="_blank"
+						>
+							{website === "#" ? "Offline" : "Website"}
+						</Button>
+						<span> | </span>
+					</span>
+				)}
+
 				<Button
 					href={github}
 					color={"secondary"}
